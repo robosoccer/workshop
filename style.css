@@ -1,0 +1,359 @@
+/* Reset and basic settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: url('bg.jpg') no-repeat center center fixed; /* Background image */
+    background-size: cover; /* Ensures the background image covers the entire screen */
+    color: #d0d0d0; /* Light Gray text color */
+    position: relative;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #1C1C1C; /* Dark background to contrast with the logo colors */
+    color: #FFFFFF; /* White text for better readability */
+    line-height: 1.6;
+}
+
+ 
+
+#header {
+    background-color: rgba(30, 30, 30, 0.9); /* Dark Steel Gray */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 40px; /* Reduced logo size for a sleeker look */
+    height: 40px;
+    margin-right: 10px;
+}
+
+.company-name {
+    font-family: 'Orbitron', sans-serif;
+    color: #ff972e; /* Teal color */
+    font-size: 1.5rem; /* Slightly reduced font size for compactness */
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px; /* Reduced margin between navbar items */
+}
+
+nav ul li a {
+    color: #d0d0d0; /* Light Gray */
+    text-decoration: none;
+    font-size: 1.1rem; /* Smaller font for a sleek appearance */
+    padding: 5px 15px; /* Reduced padding to make links less bulky */
+    border: 2px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff972e; /* Light Teal */
+    border-color: #ff972e; /* Adds a subtle border on hover */
+}
+
+/* Video Section Fullscreen */
+.video-section {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0; /* No margin at the top */
+}
+
+.video-section video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    filter: brightness(50%);
+}
+
+/* Initial full-screen video and hidden welcome text */
+.welcome-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Orbitron', sans-serif;
+    color: #d0d0d0; /* Light Gray */
+    font-size: 4.7vw;
+    text-align: center;
+    white-space: nowrap; /* Ensures text stays on one line */
+    overflow: hidden; /* Hides text outside container */
+    width: 100%; /* Ensures container spans full width */
+    border: white solid 2px;
+}
+#typed-text {
+    display: inline-block;
+    border-right: 3px solid #d0d0d0; /* Cursor effect */
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #d0d0d0; }
+}
+
+.scroll-arrow {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.scroll-arrow img {
+    width: 40px; /* Adjust size of the arrow as needed */
+    height: auto;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Sections Styling */
+section {
+    font-family: "courier New","sans-serif";
+    padding: 80px;
+    text-align: center;
+    background-color: rgba(28, 28, 28, 0.85); /* Dark Gray with slight transparency */
+    border-bottom: 1px solid #333;
+    min-height: 100vh;
+}
+@media (max-width:600px) {
+    section {
+        padding: 10px;
+    }
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-family: "orbitron",'sans-serif';
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Team Section */
+#team {
+    background-color: rgba(20, 20, 20, 0.9); /* Darker Gray */
+    padding: 80px;
+    text-align: center;
+}
+
+.team-members {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team-member {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    background: rgba(40, 40, 40, 0.9); /* Slightly lighter gray for cards */
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.member-photo {
+    flex-shrink: 0;
+    margin-right: 20px;
+}
+
+.member-photo img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Circular image */
+    object-fit: cover;
+    border: 3px solid #ff972e; /* Teal border around the photo */
+}
+
+.member-info {
+    text-align: left;
+}
+
+.member-info h3 {
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+}
+
+.member-info p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+.member-info a {
+    color: #ff972e; /* Teal color for links */
+    text-decoration: none;
+}
+
+.member-info a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(20, 20, 20, 0.9); /* Darker Gray */
+    color: #d0d0d0; /* Light Gray */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+/* Style for the hamburger menu */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+}
+
+.hamburger .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #d0d0d0; /* Light Gray */
+    border-radius: 10px;
+}
+
+/* Hide menu on mobile */
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+.fa-envelope, .fa-phone {
+    color: #ff972e; /* Set the color to match your theme */
+    transform: scaleX(-1); /* Flip the icon horizontally */
+    margin-right: 0px; /* Add some space between the icon and text */
+}
+
+.member-info a {
+    color: #d0d0d0; /* Ensures links are visible */
+    text-decoration: none;
+}
+
+.member-info a:hover {
+    color: #ff972e; /* Change color on hover */
+}
+@media (max-width: 768px) {
+    .team-member {
+        flex-direction: column; /* Stack photo and info vertically */
+        text-align: center;
+        padding: 20px;
+        width: max-content;
+    }
+    
+    .member-photo {
+        margin-right: 0;
+        margin-bottom: 15px; /* Add space between the photo and text on mobile */
+    }
+    
+    .member-photo img {
+        width: 100px; /* Reduce photo size on mobile */
+        height: 100px;
+    }
+
+    .member-info {
+        text-align: center;
+    }
+    
+    .member-info h3 {
+        font-size: 1.3rem; /* Reduce font size on mobile */
+    }
+    
+    .member-info p {
+        font-size: 0.95rem; /* Adjust font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .team-member {
+        padding: 15px;
+    }
+
+    .member-photo img {
+        width: 80px; /* Further reduce the photo size on very small screens */
+        height: 80px;
+    }
+
+    .member-info h3 {
+        font-size: 1.2rem;
+    }
+
+    .member-info p {
+        font-size: 0.9rem;
+    }
+}
+@media (max-width : 745px){
+    #header ul{
+        display: none;
+    }
+}
